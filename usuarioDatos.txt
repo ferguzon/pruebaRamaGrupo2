@@ -2,16 +2,20 @@ public Entidad.Usuarios obtenerUsuarioDatos(string nombreUsuario)
 {
 
             Entidad.CursoNetEntities dc = null;
-            Entidad.Usuarios usuario = null;
+            Entidad.Usuarios usr = null;
 
 	try
         {
 
         // obtenemos la información del usuario con base en el parámetro nombreUsuario
 
-	        dc = new Entidad.CursoNetEntities()
-        	USUARIO = dc.Usuarios.Where(u => u.login == nombreUsuario).FirstOrDefault();
+	        dc = new Entidad.CursoNetEntities();
+        	usr = dc.Usuarios.Where(u => u.login == nombreUsuario).FirstOrDefault();
                 
+		return usr;
+
+	//modificado por Leonel
+
 	}
         
 	catch (Exception err)
